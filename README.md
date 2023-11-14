@@ -5,7 +5,7 @@ This project is focused on developing a machine learning model to detect pneumon
 
 ## Dataset
 The dataset for training and evaluating our model can be found here:
-[AChest X-Ray Images (Pneumonia) Dataset](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia).
+[Chest X-Ray Images (Pneumonia) Dataset](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia).
 
 This dataset includes a substantial collection of annotated chest X-ray images, labeled for the presence or absence of pneumonia, vital for training and validating our model.
 
