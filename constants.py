@@ -1,0 +1,1 @@
+BASE_DATA_SET_DIRECTORY = 'chest_xray'
