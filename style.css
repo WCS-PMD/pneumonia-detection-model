@@ -29,3 +29,26 @@ section {
 .title {
     font-size: 60px;
 }
+
+.round-button {
+    border-radius: 10px; /* Adjust the value to control the roundness of corners */
+    width: 120px; /* Set the width */
+    height: 40px; /* Set the height */
+    background-color: #3498db; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove button border */
+    font-size: 16px; /* Font size */
+    font-weight: bold;
+    cursor: pointer;
+    color: black; 
+  }
+
+  .button-container {
+    position: fixed;
+    bottom: 10px; /* Adjust the distance from the bottom */
+    right: 20px; /* Adjust the distance from the right */
+    display: flex; /* Use flexbox to arrange buttons horizontally */
+    flex-direction: row; /* Arrange buttons in a row */
+    border-radius: 5px; /* Optional: add border radius for a rounded look */
+    padding: 10px; /* Optional: add padding inside the border */
+  }
