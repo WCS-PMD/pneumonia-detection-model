@@ -1,16 +1,13 @@
 
-import os
+
 import tensorflow as tf
 from tensorflow.keras import models, layers
 from tensorflow.keras.applications import MobileNetV2
-from tensorflow.keras.callbacks import ModelCheckpoint
 import numpy as np
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-import tensorflow as tf
 import numpy as np
 from PIL import Image
-import io
 
 # Define model
 img_size = 128
