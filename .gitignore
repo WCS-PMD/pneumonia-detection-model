@@ -134,6 +134,8 @@ dmypy.json
 
 logs/
 
+ignore_me/
+
 # PyCharm
 .idea/
 

@@ -1,5 +1,3 @@
-
-
 import tensorflow as tf
 from tensorflow.keras import models, layers
 from tensorflow.keras.applications import MobileNetV2
@@ -47,10 +45,11 @@ def process_image(file):
     img = tf.py_function(decode_img, [img], tf.float32)
     return img
 
+
 class_names = ["Normal", "Pneumonia-Bacterial", "Pneumonia-Viral", "COVID-19"]
 
 base_model = MobileNetV2(weights='imagenet', include_top=False, input_shape=(img_size, img_size, 3))
-base_model.trainable=False
+base_model.trainable = False
 model = models.Sequential()
 model.add(base_model)
 model.add(layers.GlobalAveragePooling2D())
@@ -65,6 +64,7 @@ model.load_weights('xray_model_90_percent.keras')
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS
+
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -86,6 +86,6 @@ def predict():
 
         return jsonify({'prediction': predicted_class})
 
-if __name__ == '__main__':
-    app.run(debug=True, port=5000)
 
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
