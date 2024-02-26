@@ -7,7 +7,6 @@ import numpy as np
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import numpy as np
-from PIL import Image
 
 # Define model
 img_size = 128
