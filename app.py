@@ -38,10 +38,9 @@ def decode_img(img):
 
 
 @tf.function
-def process_image(file):
-    # Load the raw data from the file as a string
-    img = tf.io.read_file(file)
-    img = tf.py_function(decode_img, [img], tf.float32)
+def process_image(file_storage):
+    img_content = file_storage.read()
+    img = tf.py_function(func=decode_img, inp=[img_content], Tout=tf.float32)
     return img
 
 
@@ -77,8 +76,8 @@ def predict():
 
     if file:
         try:
-            # Read the image
             image = process_image(file)
+            image = tf.expand_dims(image, 0)
 
             # Make a prediction
             predictions = model.predict(image)
@@ -86,7 +85,7 @@ def predict():
 
             return jsonify({'prediction': predicted_class})
         except Exception as e:
-            # For debugging purposes, in production, you'd want to log this or handle it appropriately
+            # For debugging purposes
             return jsonify({'error': str(e)}), 500
 
 
