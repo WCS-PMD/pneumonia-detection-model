@@ -1,7 +1,6 @@
 import tensorflow as tf
 from tensorflow.keras import models, layers
 from tensorflow.keras.applications import MobileNetV2
-import numpy as np
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import numpy as np
@@ -77,14 +76,18 @@ def predict():
         return jsonify({'error': 'No selected file'}), 400
 
     if file:
-        # Read the image
-        image = process_image(file)
+        try:
+            # Read the image
+            image = process_image(file)
 
-        # Make a prediction
-        predictions = model.predict(image)
-        predicted_class = class_names[np.argmax(predictions)]
+            # Make a prediction
+            predictions = model.predict(image)
+            predicted_class = class_names[np.argmax(predictions)]
 
-        return jsonify({'prediction': predicted_class})
+            return jsonify({'prediction': predicted_class})
+        except Exception as e:
+            # For debugging purposes, in production, you'd want to log this or handle it appropriately
+            return jsonify({'error': str(e)}), 500
 
 
 if __name__ == '__main__':
