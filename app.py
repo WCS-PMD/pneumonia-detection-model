@@ -44,7 +44,7 @@ def process_image(file_storage):
     return img
 
 
-class_names = ["Normal", "Pneumonia-Bacterial", "Pneumonia-Viral", "COVID-19"]
+class_names = ['COVID-19', 'Normal', 'Pneumonia-Bacterial', 'Pneumonia-Viral']
 
 base_model = MobileNetV2(weights='imagenet', include_top=False, input_shape=(img_size, img_size, 3))
 base_model.trainable = False

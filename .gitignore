@@ -137,6 +137,8 @@ logs/
 # PyCharm
 .idea/
 
+ignore_me/
+
 .vscode/
 
 # User-specific stuff:
