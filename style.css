@@ -1,3 +1,8 @@
+
+html{
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #131316;
     color: #ffffff; 
@@ -5,6 +10,7 @@ body {
     padding: 0;
     margin: 0;
 }
+
 
 section {
     display: grid;
@@ -30,6 +36,10 @@ section {
     font-size: 60px;
 }
 
+.container{
+    position: fixed;
+}
+
 .round-button {
     border-radius: 10px; /* Adjust the value to control the roundness of corners */
     width: 120px; /* Set the width */
@@ -52,3 +62,12 @@ section {
     border-radius: 5px; /* Optional: add border radius for a rounded look */
     padding: 10px; /* Optional: add padding inside the border */
   }
+
+a#scroll-btn{
+    position: absolute;
+}
+
+#section-2 {
+    background-color: #ffffff;
+}
+  
