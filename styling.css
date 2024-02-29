@@ -1,3 +1,36 @@
 html{
     scroll-behavior: smooth;
 }
+
+
+.title {
+    font-size: 1600px;
+    align-items: right;
+    display: flex;
+}
+
+.header {
+    position: relative; /* Makes the header a reference for absolutely positioned child elements */
+    width: 100%; /* Ensures the header spans the width of its container */
+    height: 60em; /* Set the height of your header */
+    background: #333; /* Just an example background color */
+    color: white; /* Text color */
+    /* Other styling for your header */
+  }
+  
+  .title-container {
+    position: absolute; /* Positions the title container relative to the header */
+    top: 0; /* Adjust these values to position your title as needed */
+    left: 0;
+    width: 100%; /* Makes the title container span the entire width of the header */
+    height: 100%; /* Makes the title container cover the entire height of the header */
+    display: flex;
+    justify-content: right; /* Centers the content horizontally */
+    align-items: top; /* Centers the content vertically */
+    /*background-color: rgba(0, 0, 0, 0.5); /* Optional: Adds a semi-transparent overlay to the title container */
+    color: white; /* Text color for the title */
+    /* Other styling for your title container */
+    z-index: 12;
+    font-size: 5em;
+  }
+  
