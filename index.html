@@ -501,28 +501,29 @@ document.getElementById('uploadForm').addEventListener('submit', function(event)
 
     // Create a FormData object and append the file to it
     var formData = new FormData();
-    formData.append('image', file);
+    formData.append('file', file); // Ensure the key matches what the Flask server expects ('file')
 
     // Send a POST request to the Flask endpoint
-    fetch('https://wcs-feernen.pythonanywhere.com/predict', {
+    fetch('http://127.0.0.1:5000/predict', { // Localhost URL
         method: 'POST',
         body: formData
     })
-    .then(response =>response.json()) 
+    .then(response => response.json())
     .then(data => {
-        // Render the prediction result into the HTML
-        document.getElementById('result').innerHTML = `
-            <h2>Prediction:</h2>
-            <p>${data.error}</p>
-        `;
+        // Check if there's an error and render the appropriate message
+        var resultMessage = data.error ? `<p>Error: ${data.error}</p>` : `<p>Prediction: ${data.prediction}</p>`;
+        
+        // Render the result into the HTML
+        document.getElementById('result').innerHTML = resultMessage;
     })
     .catch(error => {
+        // Catch any errors and display them
         document.getElementById('result').innerHTML = `
-            <p>${error}</p>
+            <p>Error: ${error}</p>
         `;
     });
-    
 });
+
 
 // Modal Image Gallery
 function onClick(element) {
