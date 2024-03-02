@@ -1,0 +1,73 @@
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #131316;
+    color: #ffffff; 
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+
+section {
+    display: grid;
+    place-items: center; 
+    align-content: center;
+    min-height: 100vh;
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+.show { 
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.title {
+    font-size: 60px;
+}
+
+.container{
+    position: fixed;
+}
+
+.round-button {
+    border-radius: 10px; /* Adjust the value to control the roundness of corners */
+    width: 120px; /* Set the width */
+    height: 40px; /* Set the height */
+    background-color: #3498db; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove button border */
+    font-size: 16px; /* Font size */
+    font-weight: bold;
+    cursor: pointer;
+    color: black; 
+  }
+
+  .button-container {
+    position: fixed;
+    bottom: 10px; /* Adjust the distance from the bottom */
+    right: 20px; /* Adjust the distance from the right */
+    display: flex; /* Use flexbox to arrange buttons horizontally */
+    flex-direction: row; /* Arrange buttons in a row */
+    border-radius: 5px; /* Optional: add border radius for a rounded look */
+    padding: 10px; /* Optional: add padding inside the border */
+  }
+
+a#scroll-btn{
+    position: absolute;
+}
+
+#section-2 {
+    background-color: #ffffff;
+}
+  
